@@ -1,51 +1,15 @@
 
-#include "../tools/multi-section-ref.typ"
-#import "../tools/macros.typ": eqref, myref, figref, remark-Le, delete-Le, add-Le, remark-Ngan, delete-Ngan, add-Ngan, theorem, definition, proposition, lemma, proof,
 #import "@preview/cetz:0.1.2": canvas, plot
 #import "@preview/cetz:0.1.2"
-#import "@preview/equate:0.2.1": equate
-#show: equate.with(breakable: true, sub-numbering: true)
-#set math.equation(numbering: "(1.1)", supplement: "Eq.")
+#import "../tools/tools.typ": set-file, eqref, eqnum, figref, theorem, definition, proposition, lemma, proof, example
+
+#show: set-file.with()
 
 
-= KIẾN THỨC LIÊN QUAN
-// = KIẾN THỨC CHUẨN BỊ
-// = Kiến thức chuẩn bị
+= Kiến thức liên quan
 
-// == LÝ THUYẾT ĐỒ THỊ
 == Lý thuyết đồ thị
 
-// === Đồ thị
-
-// @alizadehBudgetconstrainedInverseMedian2020a
-
-// == #text(orange)[1. LÝ THUYẾT ĐỒ THỊ]
-// === #text(orange)[1.1 ĐỒ THỊ]
-
-// #remark-Le[to-do list:
-// - add table list (LE, NO)
-// - spacing 1.5 (DONE)
-// - Issue with figure numbering (LE)
-// - Chinh size chu = 13pt (DONE)
-// - can le 3cm (DONE)
-// - coloring ref of figures (DONE)
-// - Chỉnh ref cua USR (DONE)
-
-// - Issue with equation numbering (LE)
-// - How to ref a theorem (LE, DONE)
-// - template for theorem (LE)
-// - add references (NGAN)
-
-// - Indent first paragraph 
-// - 
-
-
-// - some solution (một nghiệm nào đó --chứ k phải một vài nghiệm)
-// - solution (nghiệm chứ k phải lời giải)
-// - solution 
-// - Vấn đề --> Bài toán
-// - Với tất cả --> với mọi
-// ]
 
 === Khái niệm và các dạng đồ thị 
 
@@ -142,9 +106,12 @@ Lấy ví dụ trong thực tế:
 
 Tiếp theo, ta sẽ xét các dạng đồ thị thường gặp.
 
-1. _Đồ thị vô hướng (undirected graph)_ là một loại đồ thị trong đó các cạnh không có hướng ($psi_G (e) = u v  =v u$). Điều này có nghĩa là nếu có một cạnh nối hai đỉnh $u$ và $v$ thì cạnh này có thể được đi từ $u$ đến $v$ và ngược lại có thể đi từ $v$ đến $u$ . Nói cách khác, mối quan hệ giữa các đỉnh là hai chiều và không có sự phân biệt về hướng. #figref[@fig-do-thi-vo-huong] minh họa một đồ thị vô hướng.
+1. _Đồ thị vô hướng (undirected graph)_ là một loại đồ thị trong đó các cạnh không có hướng ($psi_G (e) = u v  =v u$). Điều này có nghĩa là nếu có một cạnh nối hai đỉnh $u$ và $v$ thì cạnh này có thể được đi từ $u$ đến $v$ và ngược lại có thể đi từ $v$ đến $u$ . Nói cách khác, mối quan hệ giữa các đỉnh là hai chiều và không có sự phân biệt về hướng.
+// #figref[@fig-do-thi-vo-huong] minh họa một đồ thị vô hướng.
 
-2. _Đồ thị có hướng (directed graph)_ là một loại đồ thị trong đó mỗi cạnh có hướng ($psi_G (e_1) = u v != psi_G (e_2) =v u$). Điều này có nghĩa là mỗi cạnh được biểu diễn bởi một cặp đỉnh có thứ tự, chỉ định hướng đi từ đỉnh đầu đến đỉnh cuối. Trong đồ thị có hướng, nếu có cạnh từ đỉnh $u$ đến đỉnh $v$ thì không nhất thiết phải có cạnh từ đỉnh $v$ đến đỉnh $u$. #figref[@fig-do-thi-co-huong] minh họa một đồ thị có hướng bằng các mũi tên.
+2. _Đồ thị có hướng (directed graph)_ là một loại đồ thị trong đó mỗi cạnh có hướng ($psi_G (e_1) = u v != psi_G (e_2) =v u$). Điều này có nghĩa là mỗi cạnh được biểu diễn bởi một cặp đỉnh có thứ tự, chỉ định hướng đi từ đỉnh đầu đến đỉnh cuối. Trong đồ thị có hướng, nếu có cạnh từ đỉnh $u$ đến đỉnh $v$ thì không nhất thiết phải có cạnh từ đỉnh $v$ đến đỉnh $u$.
+
+// #figref[@fig-do-thi-co-huong] minh họa một đồ thị có hướng bằng các mũi tên.
 
 
 
@@ -241,7 +208,9 @@ Tiếp theo, ta sẽ xét các dạng đồ thị thường gặp.
   caption: [Đồ thị có trọng số đỉnh và độ dài cạnh],
 ) <fig-do-thi-co-trong-so-xxx>
 
-4. _Đồ thị không có trọng số (unweighted graph)_ là đồ thị mà các cạnh và các đỉnh không có trọng số. Đồ thị trong #figref[@fig-do-thi-vo-huong] và #figref[@fig-do-thi-co-huong] là những đồ thị không có trọng số.
+4. _Đồ thị không có trọng số (unweighted graph)_ là đồ thị mà các cạnh và các đỉnh không có trọng số.
+
+// Đồ thị trong #figref[@fig-do-thi-vo-huong]  là những đồ thị không có trọng số.
 
 5. _Đồ thị liên thông (connected graph)_ là đồ thị mà từ một đỉnh bất kỳ, ta có thể đi đến tất cả các đỉnh khác thông qua các cạnh.
 

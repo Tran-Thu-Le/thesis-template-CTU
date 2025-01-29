@@ -1,5 +1,7 @@
 #include "../tools/multi-section-ref.typ"
-#import "../tools/macros.typ": eqref, remark-Le, delete-Le, add-Le, remark-Ngan, delete-Ngan, add-Ngan, theorem, definition, proposition, lemma, proof,
+#import "../tools/tools.typ": set-file, eqref, eqnum, figref, theorem, definition, proposition, lemma, proof, example
+
+#show: set-file.with()
 
 
 #heading(numbering: none, level: 1)[Kết luận]

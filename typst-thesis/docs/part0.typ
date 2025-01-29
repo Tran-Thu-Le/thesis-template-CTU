@@ -1,8 +1,64 @@
-#import "../tools/macros.typ": eqref, remark-Le, delete-Le, add-Le, remark-Ngan, delete-Ngan, add-Ngan
+#import "../tools/tools.typ": eqref, eqnum
 
 
+// -----------------------------
+//    1. Lời Cám Ơn
+// -----------------------------
+#pagebreak()
+#heading(numbering: none, level: 1)[Lời cảm ơn]
+\
+
+Để hoàn thành luận văn này, tôi đã nhận được rất nhiều sự giúp đỡ.
+
+Trước tiên, tôi xin gửi lời tri ân chân thành đến Thầy XXX. Thầy đã tận tình chỉ dẫn, định hướng và chia sẻ những kiến thức quý giá, giúp tôi vượt qua những khó khăn trong suốt quá trình thực hiện đề tài. 
 
 
+Bên cạnh đó, tôi không thể không nhắc đến sự động viên và ủng hộ từ gia đình, bạn bè, và những người thân yêu. Họ đã luôn ở bên cạnh, chia sẻ niềm vui, cổ vũ tinh thần và tiếp thêm sức mạnh cho tôi trong hành trình học tập và nghiên cứu.
+Xin gửi lời cảm ơn trân trọng đến tất cả!
+
+#let end-point = [_Cần Thơ, ngày ... tháng ... năm 2024_ \ \ \
+
+*Nguyễn Thị B*]
+
+#table(
+  columns: 2,
+  stroke: none,
+  [#h(1fr)],
+  [#align(center)[#end-point]]
+)
+
+
+// -----------------------------
+//    2. Lời Cam Đoan
+// -----------------------------
+
+#pagebreak()
+#heading(numbering: none, level: 1)[Lời cam đoan]
+
+#v(5em)
+
+#align(center, text(size: 20pt)[*Lời cam đoan*])
+
+// LỜI CAM ĐOAN
+Tôi tên Nguyễn Thị B, tôi xin cam đoan luận văn này là công trình nghiên cứu khoa học thực sự của bản thân tôi dưới sự hướng dẫn của PGS.TS Nguyễn Văn A.
+
+Tất cả thông tin tham khảo trong luận văn được thu thập từ các nguồn đáng tin cậy, đã qua kiểm chứng và công bố rộng rãi, đồng thời được tôi trích dẫn nguồn gốc rõ ràng trong phần Tài liệu tham khảo. Các kết quả nghiên cứu trình bày trong luận văn là do chính tôi thực hiện một cách nghiêm túc, trung thực và không trùng lặp với bất kỳ đề tài nào đã được công bố trước đây.
+
+Tôi cam kết bằng danh dự và uy tín cá nhân về tính xác thực của lời tuyên bố này.
+
+#table(
+  // width: 100%,
+  columns: (1fr, 1fr), 
+  // stroke: black,
+  stroke: none,
+  align(center)[\ *Cán bộ hướng dẫn*\ \ \ *PGS.TS. Nguyễn Văn A*],
+  align(center)[_Cần Thơ, ngày ... tháng ... năm 2024_
+*Sinh viên thực hiện*\ \ \ *Nguyễn Thị B*]
+)
+
+// -----------------------------
+//    3. Lý do chọn đề tài
+// -----------------------------
 #pagebreak()
 #heading(numbering: none, level: 1)[Lý do chọn đề tài]
 
@@ -74,6 +130,76 @@ Luận văn đã thành công trong việc ....
 
 Kết quả của luận văn được trình bày trong bài báo khoa học đã gửi và đang được phản biện bởi tạp chí ....
 
+// -----------------------------
+//    4. Ký hiệu, Danh mục Hình, Bảng
+// -----------------------------
+#pagebreak()
+#heading(numbering: none, level: 1)[Danh mục các ký hiệu / từ viết tắt ]
+#v(1em)
 
+// #set table.hline(stroke: 1pt)
 
+#table(
+  stroke: none,
+  columns: (auto, 6fr),
+  [$G quad quad$],  [$quad quad $Đồ thị tổng quát],
+  [],[],
+  [$V$],  [$quad quad $ Tập hợp tất cả các đỉnh trên đồ thị],
+  [],[],
+
+  [$E$],  [$quad quad$ Tập hợp tất cả các cạnh trên đồ thị],
+  [],[],
+
+  [$T$],  [$quad quad$ Đồ thị cây],
+  [],[],
+
+  [$N(x_0)$],[$quad quad$ Tập hợp tất cả các đỉnh liền kề $x_0$],
+  [],[],
+
+  [$T_u$],  [$quad quad$ Cây lấy gốc tại $u$],
+  // [],[],
+  // [$bb(1)_T$],[$quad quad$ Tập hợp tất cả các đỉnh thuộc cây $T$],
+  [],[],
+  [$bb(1)_T_u$], [$quad quad$ Vecto có phần tử thứ $i$ bằng $1$ nếu $v_i$ thuộc cây $T_u$],
+  [],[],
+  [$angle.l a, b angle.r$], [$quad quad$ Tích vô hướng giữa hai vecto $a$ và $b$],
+  [],[],
+  [$R(w)$],  [$quad quad$ Bán kính ổn định ứng với trọng số $w$],
+  [],[],
+  [$underline(R)(w)$], [$quad quad$ Cận dưới bán kính ổn định ứng với trọng số $w$],
+  [],[],
+  [USR], [$quad quad$ Bài toán nâng cấp bán kính ổn định (Upgrading Stability Radius)],
+  [],[],
+  [PUSR],  [$quad quad$ Bài toán tham số hóa của USR (Parametric USR)],
+)
+
+#pagebreak()
+#heading(numbering: none, level: 1)[Danh mục các hình ]
+#v(2em)
+#{
+  show outline.entry.where(
+    level: 1
+  ): it => {
+    text(weight: "light", it)
+  }
+  outline(
+    title: none,
+    target: figure.where(kind: image),
+  )
+}
+
+#pagebreak()
+#heading(numbering: none, level: 1)[Danh mục các bảng ]
+#v(2em)
+#{
+  show outline.entry.where(
+    level: 1
+  ): it => {
+    text(weight: "light", it)
+  }
+  outline(
+    title: none,
+    target: figure.where(kind: image),
+  )
+}
 

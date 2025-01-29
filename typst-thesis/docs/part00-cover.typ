@@ -40,7 +40,7 @@
 
     #v(1fr)
 
-    #image("../images/CTU-logo.png", width: 25%)
+    #image("../tools/data-image-1.png", width: 25%)
 
     #text(size: head-size, weight: "bold")[#thesis-label-1]
 
