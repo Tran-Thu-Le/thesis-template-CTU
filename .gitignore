@@ -1,3 +1,6 @@
 *.aux
 *typst-slides
 *test
+
+# Exclude files ending with 'show.pdf'
+!*show.pdf
