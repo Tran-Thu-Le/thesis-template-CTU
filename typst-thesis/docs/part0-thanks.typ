@@ -1,6 +1,3 @@
-#import "../tools/tools.typ": eqref, eqnum
-
-
 // -----------------------------
 //    1. Lời Cám Ơn
 // -----------------------------
@@ -199,7 +196,7 @@ Kết quả của luận văn được trình bày trong bài báo khoa học đ
   }
   outline(
     title: none,
-    target: figure.where(kind: image),
+    target: figure.where(kind: "ctutable"),
   )
 }
 

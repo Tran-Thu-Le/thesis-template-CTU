@@ -1,8 +1,9 @@
 #import "tools/tools.typ": set-thesis, set-page-numbering, set-outline
 #show: set-thesis.with()
 
-
-
+// -----------------------------------
+//    CONTENTS
+// -----------------------------------
 // --------- Phần A. Bìa, lời cảm ơn, cam đoan, lý do chọn đề tài, ...
 #include "docs/part0-cover.typ" // Bìa
 #show: set-page-numbering.with(the-numbering: "i") // Đánh số trang i, ii, iii, iv, ...
@@ -11,6 +12,7 @@
 
 
 // --------- PHẦN B. Nội dung
+// --------- CHƯƠNG 1
 #show: set-page-numbering.with(the-numbering: "1", reset: true) // đánh số trang 1, 2, 3, ...
 #pagebreak()
 #include "docs/part1-doc1-graphs.typ" // chương 1

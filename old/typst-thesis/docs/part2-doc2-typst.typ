@@ -3,7 +3,7 @@
 // #show: thmrules.with(qed-symbol: $square$)
 // #import "@preview/cetz:0.1.2": canvas, plot
 // #import "@preview/cetz:0.1.2"
-#import "../tools/tools.typ": set-file, eqref, eqnum, figref, theorem, definition, proposition, lemma, proof, example
+#import "../tools/tools.typ": set-file, eqref, eqnum, figref, theorem, definition, proposition, lemma, proof, example, ctutable
 
 #show: set-file.with()
 
@@ -132,33 +132,31 @@ Data tổng hợp trong Typst có hai dạng chính
 ==  Bảng và hình ảnh
 
 ===  Bảng
+Trích dẫn bảng:
+- `#import "../tools/tools.typ": ctutable`
+- Dùng `#ctutable()` (xem thêm cách dùng: https://typst.app/docs/reference/model/table/)
+- Chú ý bắt buộc để caption cho bảng
 
-#table(
-  columns: 3,
-  [*Cột 1*],
-  [*Cột 2*],
-  [*Cột 3*],
 
-  [Dòng 1], [Dòng 1], [Dòng 1],
-  [Dòng 2], [Dòng 2], [Dòng 2],
-)
 
-Muốn cho bảng vào giữa, ta đặt bảng trong hàm `#align(center)`
 
-#align(center)[
-  #table(
-    columns: 3,
+#ctutable(
+    columns: (1fr, 1fr, 1fr),
+    align: center,
     [*Cột 1*],
     [*Cột 2*],
     [*Cột 3*],
 
     [Dòng 1], [Dòng 1], [Dòng 1],
     [Dòng 2], [Dòng 2], [Dòng 2],
-  )
-]
+    caption: "Cách tạo Bảng trong Typst"
+) <tab-bang-1>
+
+Bây giờ tôi sẽ trích dẫn @tab-bang-1 bằng `@tab-bang-1`
+
 
 Muốn cho bảng dãn rộng bằng văn bản, ta đổi biến cột thành `(1 fr, 1 fr, 1 fr)`
-#table(
+#ctutable(
     columns: (1fr, 1fr, 1fr),
     [*Cột 1*],
     [*Cột 2*],
@@ -169,7 +167,7 @@ Muốn cho bảng dãn rộng bằng văn bản, ta đổi biến cột thành `
 )
 
 Muốn căn giữa nội dung, thêm biến `align` trọng hàm `#table`
-#table(
+#ctutable(
     columns: (1fr, 1fr, 1fr),
     align: center,
     [*Cột 1*],
@@ -180,6 +178,25 @@ Muốn căn giữa nội dung, thêm biến `align` trọng hàm `#table`
     [Dòng 2], [Dòng 2], [Dòng 2],
 )
 
+Bảng có màu theo từng ô 
+#let a = table.cell(
+  fill: green.lighten(60%),
+)[A]
+#let b = table.cell(
+  fill: aqua.lighten(60%),
+)[B]
+
+#ctutable(
+  columns: 4,
+  [], [Exam 1], [Exam 2], [Exam 3],
+
+  [John], [], a, [],
+  [Mary], [], a, a,
+  [Robert], b, a, b,
+  caption: [Bảng có màu],
+)
+
+
 ===  Hình ảnh 
 
 // Chèn hình bằng hàm `#image()`
@@ -187,12 +204,12 @@ Muốn căn giữa nội dung, thêm biến `align` trọng hàm `#table`
 
 // Thêm tiêu đề hình bằng hàm `#figure()`
 
-// #figure(
-//   image("snake.jpg", width: 30%),
-//   caption: [Tiêu đề của hình],
-// ) <hinh-logo-DHCT>
+#figure(
+  image("../tools/data-image-1.png", width: 30%),
+  caption: [Logo ĐHCT],
+) <hinh-logo-DHCT>
 
-// Cách trích dẫn hình: Ta thấy trong hình @hinh-logo-DHCT, ....
+Cách trích dẫn hình: @hinh-logo-DHCT.
 
 
 ==  Định dạng Toán

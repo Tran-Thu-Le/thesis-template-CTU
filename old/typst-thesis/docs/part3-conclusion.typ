@@ -1,6 +1,7 @@
-#import "../tools/tools.typ": eqnum, figref, theorem, definition, proposition, lemma, proof, example
+#include "../tools/multi-section-ref.typ"
+#import "../tools/tools.typ": set-file, eqref, eqnum, figref, theorem, definition, proposition, lemma, proof, example
 
-// #show: set-file.with()
+#show: set-file.with()
 
 
 #heading(numbering: none, level: 1)[Kết luận]
